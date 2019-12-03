@@ -1,0 +1,326 @@
+\documentclass[DM,lsstdraft,STR,toc]{lsstdoc}
+\usepackage{geometry}
+\usepackage{longtable,booktabs}
+\usepackage{enumitem}
+\usepackage{arydshln}
+
+\input meta.tex
+
+\providecommand{\tightlist}{
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\begin{document}
+
+\def\milestoneName{Large Scale Data Access CCOB data}
+\def\milestoneId{LDM-503-10b}
+\def\product{DBB Services}
+
+\setDocCompact{true}
+
+\title{ LDM-503-10b Large Scale Data Access CCOB data Test Plan and Report}
+\setDocRef{\lsstDocType-\lsstDocNum}
+\date{\vcsdate}
+\setDocUpstreamLocation{\url{https://github.com/lsst/lsst-texmf/examples}}
+\author{ Michelle Butler }
+
+\input history_and_info.tex
+
+
+\setDocAbstract{
+This is the test plan and report for LDM-503-10b (Large Scale Data Access CCOB data), an LSST level 2 milestone pertaining to the Data Management Subsystem.
+}
+
+
+\maketitle
+
+\section{Introduction}
+\label{sect:intro}
+
+
+\subsection{Objectives}
+\label{sect:objectives}
+
+Demonstrate the ability to transfer data from the CCOB or SLAC with 21
+rafts ~of data and ingest at LDF and make available through an instance
+of the LSP. ~This is a data transfer of data from SLAC or some other
+site with 21-raft-sized images to NCSA, ingest it into a Butler
+environment and place the file into file systems readable by the LSP.
+The CCOB device might NOT be available, but as 21 raft size data will be
+available from a test stand at SLAC, we will use a generic test stand
+data transfer method (e.g., rsync) to bring designated data to NCSA,
+ingest it, and place into appropriate filesystems, and make available
+through the LSP.
+
+
+
+\subsection{System Overview}
+\label{sect:systemoverview}
+
+This milestone is for bringing data from a test stand at SLAC that
+contains the test data for 21 rafts single image data with proper
+headers. ~ ~That data is to be transferred to the LDF and ingested into
+the Butler, and then placed in file systems that are viewable by the
+LSP. ~\\[2\baselineskip]
+
+\subsection{Applicable Documents}\label{applicable-documents}
+
+\citeds{LDM-294} Data Management Organization and Management\\
+\citeds{LDM-503} DM Test Plan\\
+\citeds{LDM-148} Data Management System Design
+
+
+\subsection{Document Overview}
+\label{sect:docoverview}
+
+This document was generated from Jira, obtaining the relevant information from the 
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testPlan/LVV-P55}{LVV-P55}
+~Jira Test Plan and related Test Cycles (
+  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCycle/LVV-C108}{LVV-C108}
+).
+
+Section \ref{sect:intro} provides an overview of the test campaign, the system under test (\product{}), the applicable documentation, and explains how this document is organized.
+Section \ref{sect:configuration}  describes the configuration used for this test.
+Section \ref{sect:personnel} describes the necessary roles and lists the individuals assigned to them.
+%Section \ref{sect:plannedtestactivities} provides the list of planned test cycles and test cases, including all relevant information that fully describes the test campaign.
+
+Section \ref{sect:overview} provides a summary of the test results, including an overview in Table \ref{table:summary}, an overall assessment statement and suggestions for possible improvements.
+Section \ref{sect:detailedtestresults} provides detailed results for each step in each test case.
+
+The current status of test plan LVV-P55 in Jira is \textbf{ Approved }.
+
+\subsection{References}
+\label{sect:references}
+\renewcommand{\refname}{}
+\bibliography{lsst,refs,books,refs_ads}
+\section{Test Configuration}
+\label{sect:configuration}
+
+\subsection{Data Collection}
+
+  Observing is not required for this test campaign.
+
+\subsection{Verification Environment}
+\label{sect:hwconf}
+  21 raft scale data created from a test stand at SLAC, data transfer
+environment installed somewhere at SLAC, data transfer environment
+installed at NCSA, and LSP installed at NCSA/LDF~
+
+
+  \subsection{Entry Criteria}
+  Data available for viewing with proper headers.~~
+
+
+  \subsection{Exit Criteria}
+  Data is viewable on LSP.~~
+
+
+
+\newpage
+\section{Personnel}
+\label{sect:personnel}
+
+The following personnel are involved in this test activity:
+
+\begin{itemize}
+\item Test Plan (LVV-P55) owner: Michelle Butler
+\item Test Cycles:
+\begin{itemize}
+  \item LVV-C108 owner: 
+    Michelle Butler
+  \begin{itemize}
+    \item Test case \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1556}{LVV-T1556} tester: 
+  \end{itemize}
+\end{itemize}
+\item Additional Test Personnel involved:
+  \begin{itemize}
+    \item Test case \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1556}{LVV-T1556}: 
+  \end{itemize}
+\end{itemize}
+
+\newpage
+
+\section{Overview of the Test Results}
+\label{sect:overview}
+
+\subsection{Summary}
+\label{sect:summarytable}
+
+\begin{longtable}{p{0.12\textwidth}p{0.2\textwidth}p{0.56\textwidth}p{0.12\textwidth}}
+\toprule
+
+  \multicolumn{3}{c}{ Test Cycle {\bf LVV-C108: LDM-503-10b Large Scale CCOB Data Access
+ }} \\\hline
+
+  {\bf \footnotesize test case} & {\bf \footnotesize status} & {\bf \footnotesize comment} & {\bf \footnotesize issues} \\\toprule
+
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1556}{LVV-T1556}
+    & Not Executed &  &
+    \\\hline
+
+\caption{Test Results Summary}
+\label{table:summary}
+\end{longtable}
+
+\subsection{Overall Assessment}
+\label{sect:overallassessment}
+
+Not yet available.
+
+\subsection{Recommended Improvements}
+\label{sect:recommendations}
+
+Not yet available.
+
+\newpage
+\section{Detailed Test Results}
+\label{sect:detailedtestresults}
+
+
+  \subsection{Test Cycle LVV-C108 }
+
+Open test cycle {\it \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testrun/LVV-C108}{LDM-503-10b Large Scale CCOB Data Access
+}} in Jira.
+
+  LDM-503-10b Large Scale CCOB Data Access
+\\
+  Status: Not Executed
+
+  Demonstrate the ability to transfer data from the CCOB with 21 rafts
+from SLAC and ingested at NCSA and make available through an instance of
+the LSP\\[2\baselineskip]
+
+
+  \subsubsection{Software Version/Baseline}
+    Not provided.
+
+  \subsubsection{Configuration}
+    21 Raft data with proper headers at SLAC. ~ Data transfer environment
+installed on SLAC systems. ~Data transfer environment at NCSA. ~Ingest
+software installed at LDF. ~LSP environment installed at NCSA.~~
+
+
+  \subsubsection{Test Cases in LVV-C108 Test Cycle}
+
+
+    \paragraph{Test Case LVV-T1556 - LDM-503-10B Large Scale CCOB Data Access
+ }\mbox{}\\
+
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1556}{\textit{ LVV-T1556 } }
+test case in Jira.
+
+    Demonstrate the ability to transfer data from the SLAC test stand or
+CCOB with 21 rafts from SLAC and ingested at NCSA and make available
+through an instance of the LSP
+
+
+    \textbf{ Preconditions}:\\
+    SLAC or some other test stand needs to have produced 21 rafts of data
+that has some enviornment for transferring the data to NCSA.~ ~
+
+
+    Execution status: {\bf Not Executed }
+
+    Final comment:\\
+
+
+    Detailed step results:
+
+    \begin{longtable}{p{1cm}p{2cm}p{13cm}}
+    \hline
+    {Step} & \multicolumn{2}{c}{Description, Results and Status}\\ \hline
+      1 & Description &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      Have a system at SLAC that has the 21 raft data that needs to be
+transferred to NCSA, and all accounts and scripts installed on
+environment that can read that data.~ ~
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Expected Result &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      scripts are able to transfer the data to NCSA though rsync or bbcp.
+~\\[2\baselineskip]
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
+      \begin{minipage}[t]{13cm}{\footnotesize
+      
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Status          & Not Executed \\ \hline
+
+      2 & Description &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      Data is transferred to NCSA and ingested into Butler~
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Expected Result &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      Data is transferred to NCSA, and can now be see in file systems by the
+LSP. ~\\[2\baselineskip]
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
+      \begin{minipage}[t]{13cm}{\footnotesize
+      
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Status          & Not Executed \\ \hline
+
+      3 & Description &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      using the LSP view the data in the ingested directory~
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Expected Result &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      data can be viewed.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
+      \begin{minipage}[t]{13cm}{\footnotesize
+      
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Status          & Not Executed \\ \hline
+
+    \end{longtable}
+
+
+\input{appendix.tex}
+\end{document}
