@@ -9,6 +9,8 @@
 \providecommand{\tightlist}{
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
+\setcounter{tocdepth}{4}
+
 \begin{document}
 
 \def\milestoneName{Large Scale Data Access CCOB data}
@@ -27,7 +29,8 @@
 
 
 \setDocAbstract{
-This is the test plan and report for LDM-503-10b (Large Scale Data Access CCOB data), an LSST level 2 milestone pertaining to the Data Management Subsystem.
+This is the test plan and report for LDM-503-10b (Large Scale Data Access CCOB data),
+an LSST level 2 milestone pertaining to the Data Management Subsystem.
 }
 
 
@@ -40,7 +43,7 @@ This is the test plan and report for LDM-503-10b (Large Scale Data Access CCOB d
 \subsection{Objectives}
 \label{sect:objectives}
 
-Demonstrate the ability to transfer data from the CCOB or SLAC with 21
+ Demonstrate the ability to transfer data from the CCOB or SLAC with 21
 rafts ~of data and ingest at LDF and make available through an instance
 of the LSP. ~This is a data transfer of data from SLAC or some other
 site with 21-raft-sized images to NCSA, ingest it into a Butler
@@ -56,7 +59,7 @@ through the LSP.
 \subsection{System Overview}
 \label{sect:systemoverview}
 
-This milestone is for bringing data from a test stand at SLAC that
+ This milestone is for bringing data from a test stand at SLAC that
 contains the test data for 21 rafts single image data with proper
 headers. ~ ~That data is to be transferred to the LDF and ingested into
 the Butler, and then placed in file systems that are viewable by the
@@ -78,12 +81,15 @@ This document was generated from Jira, obtaining the relevant information from t
   \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCycle/LVV-C108}{LVV-C108}
 ).
 
-Section \ref{sect:intro} provides an overview of the test campaign, the system under test (\product{}), the applicable documentation, and explains how this document is organized.
+Section \ref{sect:intro} provides an overview of the test campaign, the system under test (\product{}),
+the applicable documentation, and explains how this document is organized.
 Section \ref{sect:configuration}  describes the configuration used for this test.
 Section \ref{sect:personnel} describes the necessary roles and lists the individuals assigned to them.
-%Section \ref{sect:plannedtestactivities} provides the list of planned test cycles and test cases, including all relevant information that fully describes the test campaign.
+%Section \ref{sect:plannedtestactivities} provides the list of planned test cycles and test cases,
+including all relevant information that fully describes the test campaign.
 
-Section \ref{sect:overview} provides a summary of the test results, including an overview in Table \ref{table:summary}, an overall assessment statement and suggestions for possible improvements.
+Section \ref{sect:overview} provides a summary of the test results, including an overview in Table \ref{table:summary},
+an overall assessment statement and suggestions for possible improvements.
 Section \ref{sect:detailedtestresults} provides detailed results for each step in each test case.
 
 The current status of test plan LVV-P55 in Jira is \textbf{ Approved }.
@@ -105,59 +111,65 @@ The current status of test plan LVV-P55 in Jira is \textbf{ Approved }.
 environment installed somewhere at SLAC, data transfer environment
 installed at NCSA, and LSP installed at NCSA/LDF~
 
-
   \subsection{Entry Criteria}
   Data available for viewing with proper headers.~~
 
-
   \subsection{Exit Criteria}
   Data is viewable on LSP.~~
-
 
 
 \newpage
 \section{Personnel}
 \label{sect:personnel}
 
-The following personnel are involved in this test activity:
+The personnel involved in the test campaign are shown in the following table.
 
-\begin{itemize}
-\item Test Plan (LVV-P55) owner: Michelle Butler
-\item Test Cycles:
-\begin{itemize}
-  \item LVV-C108 owner: 
+\begin{longtable}{p{3cm}p{3cm}p{3cm}p{6cm}}
+\hline
+\multicolumn{2}{r}{Test Plan (LVV-P55) owner:} &
+\multicolumn{2}{l}{\textbf{ Michelle Butler } }\\\hline
+\multicolumn{2}{r}{ LVV-C108 owner:} &
+\multicolumn{2}{l}{\textbf{
     Michelle Butler
-  \begin{itemize}
-    \item Test case \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1556}{LVV-T1556} tester: 
-  \end{itemize}
-\end{itemize}
-\item Additional Test Personnel involved:
-  \begin{itemize}
-    \item Test case \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1556}{LVV-T1556}: 
-  \end{itemize}
-\end{itemize}
+}
+} \\\hline
+\textbf{Test Case} & \textbf{Assigned to} & \textbf{Executed by} & \textbf{Additional Test Personnel} \\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1556}{LVV-T1556}
+& {\small Michelle Butler } & {\small  } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small  }
+\medskip
+\end{minipage}
+\\ \hline
+\end{longtable}
 
 \newpage
 
-\section{Overview of the Test Results}
+\section{Test Campaign Overview}
 \label{sect:overview}
 
 \subsection{Summary}
 \label{sect:summarytable}
 
-\begin{longtable}{p{0.12\textwidth}p{0.2\textwidth}p{0.56\textwidth}p{0.12\textwidth}}
+\begin{longtable}{p{2cm}p{2.5cm}p{9cm}p{2.5cm}}
 \toprule
+\multicolumn{3}{p{13.5cm}}{ Test Plan {\bf LVV-P55: LDM-503-10b Large Scale Data Access CCOB data }} & Approved \\\hline
 
-  \multicolumn{3}{c}{ Test Cycle {\bf LVV-C108: LDM-503-10b Large Scale CCOB Data Access
- }} \\\hline
+  \multicolumn{3}{p{13.5cm}}{ Test Cycle {\bf LVV-C108: LDM-503-10b Large Scale CCOB Data Access }} & Not Executed \\\hline
 
   {\bf \footnotesize test case} & {\bf \footnotesize status} & {\bf \footnotesize comment} & {\bf \footnotesize issues} \\\toprule
 
-    \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1556}{LVV-T1556}
-    & Not Executed &  &
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1556}{LVV-T1556}
+    & Not Executed &
+    \begin{minipage}[]{9cm}
+    \smallskip
+    
+    \medskip
+    \end{minipage}
+    &
     \\\hline
-
-\caption{Test Results Summary}
+\caption{Test Campaign Summary}
 \label{table:summary}
 \end{longtable}
 
@@ -175,151 +187,148 @@ Not yet available.
 \section{Detailed Test Results}
 \label{sect:detailedtestresults}
 
+\subsection{Test Cycle LVV-C108 }
 
-  \subsection{Test Cycle LVV-C108 }
+Open test cycle {\it \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testrun/LVV-C108}{LDM-503-10b Large Scale CCOB Data Access}} in Jira.
 
-Open test cycle {\it \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testrun/LVV-C108}{LDM-503-10b Large Scale CCOB Data Access
-}} in Jira.
+LDM-503-10b Large Scale CCOB Data Access\\
+Status: Not Executed
 
-  LDM-503-10b Large Scale CCOB Data Access
-\\
-  Status: Not Executed
-
-  Demonstrate the ability to transfer data from the CCOB with 21 rafts
+Demonstrate the ability to transfer data from the CCOB with 21 rafts
 from SLAC and ingested at NCSA and make available through an instance of
 the LSP\\[2\baselineskip]
 
+\subsubsection{Software Version/Baseline}
+Not provided.
 
-  \subsubsection{Software Version/Baseline}
-    Not provided.
-
-  \subsubsection{Configuration}
-    21 Raft data with proper headers at SLAC. ~ Data transfer environment
+\subsubsection{Configuration}
+21 Raft data with proper headers at SLAC. ~ Data transfer environment
 installed on SLAC systems. ~Data transfer environment at NCSA. ~Ingest
 software installed at LDF. ~LSP environment installed at NCSA.~~
 
+\subsubsection{Test Cases in LVV-C108 Test Cycle}
 
-  \subsubsection{Test Cases in LVV-C108 Test Cycle}
-
-
-    \paragraph{Test Case LVV-T1556 - LDM-503-10B Large Scale CCOB Data Access
- }\mbox{}\\
+\paragraph{Test Case LVV-T1556 - LDM-503-10B Large Scale CCOB Data Access }\mbox{}\\
 
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1556}{\textit{ LVV-T1556 } }
 test case in Jira.
 
-    Demonstrate the ability to transfer data from the SLAC test stand or
+Demonstrate the ability to transfer data from the SLAC test stand or
 CCOB with 21 rafts from SLAC and ingested at NCSA and make available
 through an instance of the LSP
 
-
-    \textbf{ Preconditions}:\\
-    SLAC or some other test stand needs to have produced 21 rafts of data
+\textbf{ Preconditions}:\\
+SLAC or some other test stand needs to have produced 21 rafts of data
 that has some enviornment for transferring the data to NCSA.~ ~
 
+Execution status: {\bf Not Executed }
 
-    Execution status: {\bf Not Executed }
-
-    Final comment:\\
+Final comment:\\
 
 
-    Detailed step results:
+Detailed steps results:
 
-    \begin{longtable}{p{1cm}p{2cm}p{13cm}}
-    \hline
-    {Step} & \multicolumn{2}{c}{Description, Results and Status}\\ \hline
-      1 & Description &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      Have a system at SLAC that has the 21 raft data that needs to be
+\begin{longtable}{p{1cm}p{15cm}}
+\hline
+{Step} & Step Details\\ \hline
+1 & Description \\
+ & \begin{minipage}[t]{15cm}
+{\footnotesize
+Have a system at SLAC that has the 21 raft data that needs to be
 transferred to NCSA, and all accounts and scripts installed on
 environment that can read that data.~ ~
 
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+\medskip }
+\end{minipage}
+\\ \cdashline{2-2}
 
+ & Test Data \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
+21 rafts of data with proper headers~
 
-      & Expected Result &
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      scripts are able to transfer the data to NCSA though rsync or bbcp.
+ & Expected Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
+scripts are able to transfer the data to NCSA though rsync or bbcp.
 ~\\[2\baselineskip]
 
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
-      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+ & Actual Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
 
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
-      & Status          & Not Executed \\ \hline
+ & Status: \textbf{ Not Executed } \\ \hline
 
-      2 & Description &
+2 & Description \\
+ & \begin{minipage}[t]{15cm}
+{\footnotesize
+Data is transferred to NCSA and ingested into Butler~
 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      Data is transferred to NCSA and ingested into Butler~
+\medskip }
+\end{minipage}
+\\ \cdashline{2-2}
 
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+ & Test Data \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
+21 rafts of data~
 
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
-      & Expected Result &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      Data is transferred to NCSA, and can now be see in file systems by the
+ & Expected Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
+Data is transferred to NCSA, and can now be see in file systems by the
 LSP. ~\\[2\baselineskip]
 
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
-      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+ & Actual Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
 
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
-      & Status          & Not Executed \\ \hline
+ & Status: \textbf{ Not Executed } \\ \hline
 
-      3 & Description &
+3 & Description \\
+ & \begin{minipage}[t]{15cm}
+{\footnotesize
+using the LSP view the data in the ingested directory~
 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      using the LSP view the data in the ingested directory~
+\medskip }
+\end{minipage}
+\\ \cdashline{2-2}
 
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+ & Test Data \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
+21 rafts of data with proper headers and available with Butler.get~
 
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
-      & Expected Result &
+ & Expected Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
+data can be viewed.
 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      data can be viewed.
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+ & Actual Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
 
-      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
+ & Status: \textbf{ Not Executed } \\ \hline
 
-      & Status          & Not Executed \\ \hline
-
-    \end{longtable}
+\end{longtable}
 
 
 \input{appendix.tex}
