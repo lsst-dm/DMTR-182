@@ -52,33 +52,35 @@ an LSST milestone pertaining to the Data Management Subsystem.
 \subsection{Objectives}
 \label{sect:objectives}
 
- Demonstrate the ability to transfer data from the CCOB or SLAC with 21
-rafts ~of data and ingest at LDF and make available through an instance
-of the LSP. ~This is a data transfer of data from SLAC or some other
-site with 21-raft-sized images to NCSA, ingest it into a Butler
-environment and place the file into file systems readable by the LSP.
-The CCOB device might NOT be available, but as 21 raft size data will be
-available from a test stand at SLAC, we will use a generic test stand
-data transfer method (e.g., rsync) to bring designated data to NCSA,
-ingest it, and place into appropriate filesystems, and make available
-through the LSP.
+ Demonstrate the ability to transfer data from the CCOB at SLAC with 21
+rafts of data, ~ingest at LDF and make available for viewing and further
+processing through an instance of the RSP. ~This is a data transfer of
+data from SLAC ~with 21-raft-sized images to NCSA, ingest it into a
+Butler environment and place the file into file systems accessible by
+the RSP. The CCOB device might NOT be available, but as 21 raft size
+data will be available from a test stand at SLAC, we will use a generic
+test stand data transfer method (e.g., rsync) to bring designated data
+to NCSA, ingest it, and place into appropriate filesystems, and make
+available through the RSP. ~This data comes from the Camera Control
+System (CCS). ~
 
 
 
 \subsection{System Overview}
 \label{sect:systemoverview}
 
- This milestone is for bringing data from a test stand at SLAC that
+ This milestone validates the data from a test stand at SLAC that
 contains the test data for 21 rafts single image data with proper
 headers. ~ ~That data is to be transferred to the LDF and ingested into
 the Butler, and then placed in file systems that are viewable by the
-LSP. ~\\[2\baselineskip]
+RSP. ~\\[2\baselineskip]
 
 \subsection{Applicable Documents}\label{applicable-documents}
 
 \citeds{LDM-294} Data Management Organization and Management\\
 \citeds{LDM-503} DM Test Plan\\
-\citeds{LDM-148} Data Management System Design
+\citeds{LDM-148} Data Management System Design\\
+\citeds{LDM-639} Data Management Acceptance Test Specification~
 
 
 \subsection{Document Overview}
@@ -120,14 +122,14 @@ The current status of test plan \href{https://jira.lsstcorp.org/secure/Tests.jsp
 \subsection{Verification Environment}
 \label{sect:hwconf}
   21 raft scale data created from a test stand at SLAC, data transfer
-environment installed somewhere at SLAC, data transfer environment
-installed at NCSA, and LSP installed at NCSA/LDF~
+environment installed at SLAC, data transfer environment installed at
+NCSA, and RSP installed at NCSA/LDF~
 
   \subsection{Entry Criteria}
   Data available for viewing with proper headers.~~
 
   \subsection{Exit Criteria}
-  Data is viewable on LSP.~~
+  Data is viewable on RSP. ~
 
 
 \subsection{Related Documentation}
@@ -167,7 +169,7 @@ Michelle Butler }
 } \\\hline
 \textbf{Test Cases} & \textbf{Assigned to} & \textbf{Executed by} & \textbf{Additional Test Personnel} \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1556}{LVV-T1556}
-& {\small Michelle Butler } & {\small  } &
+& {\small Michelle Butler } & {\small Michelle Butler } &
 \begin{minipage}[]{6cm}
 \smallskip
 {\small  }
@@ -191,14 +193,17 @@ Michelle Butler }
 \multicolumn{2}{r}{ T. Plan \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testPlan/LVV-P55}{LVV-P55}:} &
 \multicolumn{2}{p{10.9cm}}{\textbf{ LDM-503-10b: Large Scale CCOB Data Access }} & Approved \\\hline
 \multicolumn{2}{r}{ T. Cycle \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCycle/LVV-C108}{LVV-C108}:} &
-\multicolumn{2}{p{10.9cm}}{\textbf{ LDM-503-10b Large Scale CCOB Data Access }} & Not Executed \\\hline
+\multicolumn{2}{p{10.9cm}}{\textbf{ LDM-503-10b Large Scale CCOB Data Access }} & Done \\\hline
 \textbf{Test Cases} &  \textbf{Ver.} & \textbf{Status} & \textbf{Comment} & \textbf{Issues} \\\toprule
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1556}{LVV-T1556}
 &  1
-& Not Executed &
+& Pass &
 \begin{minipage}[]{9cm}
 \smallskip
-
+Data transferred (20090 files) to NCSA on 8/19/2020. ~The files were
+transferred to NCSA and were ingested into the directory(20086 files; 4
+were zero length):
+/lsstdata/offline/teststand/BOT/storage/20200819\\[2\baselineskip]
 \medskip
 \end{minipage}
 &   \\\hline
@@ -210,12 +215,24 @@ Michelle Butler }
 \subsection{Overall Assessment}
 \label{sect:overallassessment}
 
-Not yet available.
+CCOB (camera control system) CCS images were transferred to NCSA through
+the rsync utilitiy. ~ Data was ingested by cron job at NCSA and was made
+available on the RSP for further review and processing by scientific
+staff.~~
 
 \subsection{Recommended Improvements}
 \label{sect:recommendations}
 
-Not yet available.
+The current data transfer method is too slow for quick changes to the
+camera and images. ~ suggestion of the RSP be installed at SLAC so that
+images can be retrieved quickly and viewed. ~ The data at SLAC must be
+moved to node that is accessible to outside internet. ~ The data is then
+``rsynced'' to NCSA. ~ The utility to do the data transfer should be
+BBCP. ~Rsync was for smaller files and previously needed in the project.
+~ Those are 2 suggestions moving forward with these tests. ~ Depending
+on how long the CCS environment stays at SLAC, depends on how much
+effort needs to go into making these transfer mechanisms faster or not.
+~\\[2\baselineskip]
 
 \newpage
 \section{Detailed Test Results}
@@ -226,7 +243,7 @@ Not yet available.
 Open test cycle {\it \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testrun/LVV-C108}{LDM-503-10b Large Scale CCOB Data Access}} in Jira.
 
 Test Cycle name: LDM-503-10b Large Scale CCOB Data Access\\
-Status: Not Executed
+Status: Done
 
 Demonstrate the ability to transfer data from the CCOB with 21 rafts
 from SLAC and ingested at NCSA and make available through an instance of
@@ -238,7 +255,7 @@ Not provided.
 \subsubsection{Configuration}
 21 Raft data with proper headers at SLAC. ~ Data transfer environment
 installed on SLAC systems. ~Data transfer environment at NCSA. ~Ingest
-software installed at LDF. ~LSP environment installed at NCSA.~~
+software installed at LDF.~ RSP environment installed at NCSA. ~
 
 \subsubsection{Test Cases in LVV-C108 Test Cycle}
 
@@ -250,15 +267,18 @@ test case in Jira.
 
 Demonstrate the ability to transfer data from the SLAC test stand or
 CCOB with 21 rafts from SLAC and ingested at NCSA and make available
-through an instance of the LSP
+through an instance of the RSP
 
 \textbf{ Preconditions}:\\
 SLAC or some other test stand needs to have produced 21 rafts of data
 that has some enviornment for transferring the data to NCSA.~ ~
 
-Execution status: {\bf Not Executed }
+Execution status: {\bf Pass }
 
-Final comment:\\
+Final comment:\\Data transferred (20090 files) to NCSA on 8/19/2020. ~The files were
+transferred to NCSA and were ingested into the directory(20086 files; 4
+were zero length):
+/lsstdata/offline/teststand/BOT/storage/20200819\\[2\baselineskip]
 
 
 Detailed steps results:
@@ -294,11 +314,13 @@ scripts are able to transfer the data to NCSA though rsync or bbcp.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
+SLAC started in late August with the main telescope camera (MTCam)
+having the ability to generate 21 raft scale images. ~\\[2\baselineskip]
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 2 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -319,23 +341,25 @@ Data is transferred to NCSA and ingested into Butler~
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
 Data is transferred to NCSA, and can now be see in file systems by the
-LSP. ~\\[2\baselineskip]
+RSP. ~\\[2\baselineskip]
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
+Data was transferred and ingested into Gen2
+Butler:~/lsstdata/offline/teststand/BOT/storage/20200819
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 3 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-using the LSP view the data in the ingested directory~
+using the RSP view the data in the ingested directory~
 
 \medskip }
 \end{minipage}
@@ -357,11 +381,13 @@ data can be viewed.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
+Data is available on the RSP:
+/lsstdata/offline/teststand/BOT/storage/20200819\\[2\baselineskip]
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 \end{longtable}
 
