@@ -122,15 +122,14 @@ The current status of test plan \href{https://jira.lsstcorp.org/secure/Tests.jsp
 
 \subsection{Verification Environment}
 \label{sect:hwconf}
-  21 raft scale data created from a test stand at SLAC, data transfer
-environment installed at SLAC, data transfer environment installed at
-NCSA, and RSP installed at NCSA/LDF~
 
   \subsection{Entry Criteria}
-  Data available for viewing with proper headers.~~
+  Images taken and sent to NCSA through CCS data transfer mechanisms.~
+~\\[2\baselineskip]
 
   \subsection{Exit Criteria}
-  Data is viewable on RSP. ~
+  Data is viewable on RSP which means that it was ingested and placed in a
+Butler repo. ~
 
 
 \subsection{Related Documentation}
@@ -211,27 +210,30 @@ were zero length):
 \label{sect:overallassessment}
 
 CCOB (camera control system) CCS images were transferred to NCSA through
-the rsync utilitiy. ~ Data was ingested by cron job at NCSA and was made
-available on the RSP for further review and processing by scientific
-staff. ~ Here is a notebook that allows the image generation from the 21
-raft data:
-~\textasciitilde{}rlupton/jhome/notebooks/notebooks-rhl/Demos/Pinholes.ipynb
-~\\
+the rsync utilitiy (CCS method of data transfer) . ~ Data was ingested
+by cron job at NCSA into a Gen2 repo and was made available on the RSP
+for further review and processing by scientific staff. ~ Here is a
+notebook that allows the image generation from the 21 raft data: ~
+github: path to notebook~\\
 \includegraphics[width=3.12500in]{jira_imgs/1550.png}
 
 \subsection{Recommended Improvements}
 \label{sect:recommendations}
 
 The current data transfer method is too slow for quick changes to the
-camera and images. ~ suggestion of the RSP be installed at SLAC so that
-images can be retrieved quickly and viewed. ~ The data at SLAC must be
-moved to node that is accessible to outside internet. ~ The data is then
+camera and images as the CCOB is currently at SLAC. ~The timing will
+change once the CCOB is placed on the mountain. ~This is temporary due
+to the environment at SLAC. ~ NCSA then ingests the data into a butler
+repo as it's transferred to NCSA. ~ ~ ~ A suggestion of the RSP be
+installed at SLAC so that images can be retrieved quickly and viewed. ~
+The data at SLAC must be moved to a node that is accessible to outside
+an outside internet connection able to reach NCSA. ~ The data is then
 ``rsynced'' to NCSA. ~ The utility to do the data transfer should be
 BBCP. ~Rsync was for smaller files and previously needed in the project.
-~ Those are 2 suggestions moving forward with these tests. ~ Depending
-on how long the CCS environment stays at SLAC, depends on how much
-effort needs to go into making these transfer mechanisms faster or not.
-~\\[2\baselineskip]
+~ Those are 2 suggestions moving forward with these tests once the CCOB
+is on the mountain.~ Depending on how long the CCS environment stays at
+SLAC, depends on how much effort needs to go into making these transfer
+mechanisms faster or not. ~\\[2\baselineskip]
 
 \newpage
 \section{Detailed Test Results}
