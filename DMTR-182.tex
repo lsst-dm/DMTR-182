@@ -224,16 +224,21 @@ The current data transfer method is too slow for quick changes to the
 camera and images as the CCOB is currently at SLAC. ~The timing will
 change once the CCOB is placed on the mountain. ~This is temporary due
 to the environment at SLAC. ~ NCSA then ingests the data into a butler
-repo as it's transferred to NCSA. ~ ~ ~ A suggestion of the RSP be
-installed at SLAC so that images can be retrieved quickly and viewed. ~
-The data at SLAC must be moved to a node that is accessible to outside
-an outside internet connection able to reach NCSA. ~ The data is then
-``rsynced'' to NCSA. ~ The utility to do the data transfer should be
-BBCP. ~Rsync was for smaller files and previously needed in the project.
-~ Those are 2 suggestions moving forward with these tests once the CCOB
-is on the mountain.~ Depending on how long the CCS environment stays at
-SLAC, depends on how much effort needs to go into making these transfer
-mechanisms faster or not. ~\\[2\baselineskip]
+repo as the file arrives at NCSA. ~ ~ ~ A suggestion of the RSP be
+installed at SLAC so that images can be retrieved quickly and changes to
+the camera could be quicker. ~ The data at SLAC must be moved to a node
+that is accessible to ~an outside internet connection which is able to
+reach NCSA. ~This has taken in the past hours. ~ The data is then
+``rsynced'' to NCSA. ~ ~ Currently after the files are placed in a
+outside visible node, each file takes on average 4 seconds to be
+transferred and ingested. ~ ~Depending on how long the CCS environment
+stays at SLAC, will put priority on how much effort needs to go into
+making these transfer mechanisms faster or not. ~ ~\\[2\baselineskip]As
+the CCOB for 21 RAFT data moves from SLAC to the mountain, the CCS data
+will be available immediately to be transferred to NCSA or available on
+the telemetry cluster that can have a RSP environment installed for
+immediate viewing. This. slowness of the CCOB data is temporary due to
+it's location at SLAC.~~\\[2\baselineskip]
 
 \newpage
 \section{Detailed Test Results}
