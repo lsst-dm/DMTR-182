@@ -81,7 +81,8 @@ RSP. ~\\[2\baselineskip]
 \citeds{LDM-294} Data Management Organization and Management\\
 \citeds{LDM-503} DM Test Plan\\
 \citeds{LDM-148} Data Management System Design\\
-\citeds{LDM-639} Data Management Acceptance Test Specification~
+\citeds{LDM-639} Data Management Acceptance Test Specification\\
+\citeds{LSE-400} Header Service Interface between the OCS and EFD~
 
 
 \subsection{Document Overview}
@@ -214,7 +215,8 @@ the rsync utilitiy (CCS method of data transfer) . ~ Data was ingested
 by cron job at NCSA into a Gen2 repo and was made available on the RSP
 for further review and processing by scientific staff. ~ Here is a
 notebook that allows the image generation from the 21 raft data: ~
-github: path to notebook~\\
+github:
+~https://github.com/lsst-dm/\citeds{DMTR-182}/tree/executions/pinholes.ipynb\\
 \includegraphics[width=3.12500in]{jira_imgs/1550.png}
 
 \subsection{Recommended Improvements}
@@ -253,15 +255,16 @@ Status: Done
 
 Demonstrate the ability to transfer data from the CCOB with 21 rafts
 from SLAC and ingested at NCSA and make available through an instance of
-the LSP\\[2\baselineskip]
+the RSP (Rubin Science Platform)\\[2\baselineskip]
 
 \subsubsection{Software Version/Baseline}
 Not provided.
 
 \subsubsection{Configuration}
-21 Raft data with proper headers at SLAC. ~ Data transfer environment
-installed on SLAC systems. ~Data transfer environment at NCSA. ~Ingest
-software installed at LDF.~ RSP environment installed at NCSA. ~
+The data at SLAC is 21 rafts of 9CCD image with proper headers at SLAC.
+~ The data transfer environment installed on SLAC systems for specific
+diretories only. ~Data transfer environment at NCSA. ~Ingest software
+installed at LDF. ~RSP environment installed at NCSA. ~~
 
 \subsubsection{Test Cases in LVV-C108 Test Cycle}
 
@@ -277,7 +280,15 @@ through an instance of the RSP
 
 \textbf{ Preconditions}:\\
 SLAC or some other test stand needs to have produced 21 rafts of data
-that has some enviornment for transferring the data to NCSA.~ ~
+that has some environment for transferring the data to NCSA. ~ ~The
+images won't be able to be ingested at NCSA into butler repositories if
+the headers are not correct. ~ ~The \citeds{LSE-400} document calls out what
+fields are designed to be completed by the image properly.~ ~The headers
+at this time are still in test form, and are being updated as images are
+created.~ ~ The confluence page
+of:~\url{https://confluence.lsstcorp.org/display/SYSENG/ComCam+Header+Information+Topic+Mapping}
+has the current header configuration and what the information maps to
+for the ingest information.~ ~
 
 Execution status: {\bf Pass }
 
