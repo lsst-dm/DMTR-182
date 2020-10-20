@@ -2,6 +2,8 @@
    :target: https://dmtr-182.lsst.io
 .. image:: https://travis-ci.com/lsst-dm/DMTR-182.svg
    :target: https://travis-ci.com/lsst-dm/DMTR-182
+.. image:: https://github.com/lsst-dm/DMTR-182/workflows/CI/badge.svg
+   :target: https://github.com/lsst-dm/DMTR-182/actions/
 
 #############################################
 LDM-503-10b Large Scale Data Access CCOB data
